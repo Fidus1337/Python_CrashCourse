@@ -1,0 +1,14 @@
+{
+    "json.schemas": [],
+    "editor.accessibilityPageSize": 10,
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./CodeFolder",
+        "-p",
+        "test_*.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true,
+    "python.testing.pytestArgs": []
+}
