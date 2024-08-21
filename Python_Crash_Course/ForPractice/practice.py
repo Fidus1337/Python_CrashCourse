@@ -1,20 +1,16 @@
-from pathlib import Path
-import json
+def another_function(func):
+    """
+    A function that accepts another function
+    """
+    def other_func():
+        val = f"{func()} = {eval(func())}"
+        return val
+    return other_func
 
-path = Path('Python_Crash_Course/ForPractice/names.json')
-if path.exists():
-    contents = path.read_text()
-    names = json.loads(contents)
-    print(f"Welcome back, {names}!")
-else:
-    names = []  # We are going to load an array of names
-    while True:
-        username = input("What is your name? (or q to quit poll) ")
-        contents = json.dumps(names)
-        if username == 'q':
-            break
-        else:
-            names.append(username)
-    with open(path, 'w') as file:
-        json.dump(names, file, indent=4)
-    print("We'll remember you all when you come back!")
+
+def sample_function():
+    return "2 + 2"
+
+
+result = another_function(sample_function)
+print(result())  # Выведет: 2 + 2 = 4
